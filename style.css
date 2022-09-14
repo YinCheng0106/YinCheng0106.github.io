@@ -1,0 +1,14 @@
+body{
+    background-color:rgb(114, 201, 232);
+}
+h1 {
+    text-align: center;
+    color: blue;
+    font-size: 300%;
+}
+#wec {
+    text-align: center;
+}
+#inf {
+    text-align: center;
+}
