@@ -1,14 +1,47 @@
 body{
-    background-color:rgb(114, 201, 232);
+    background-color:rgb(90, 124, 136);
 }
 h1 {
     text-align: center;
-    color: blue;
+    color: rgb(0, 0, 0, 0.75);
     font-size: 300%;
+}
+#yc {
+    width: auto;
+    height: 48px;
+}
+#title {
+    font-family: monospace;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 500%;
 }
 #wec {
     text-align: center;
 }
 #inf {
     text-align: center;
+}
+#dc {
+    text-align: center;
+}
+#ig {
+    opacity:0.75;
+    width: 48px;
+    height: 48px;
+}
+#discord {
+    opacity:0.75;
+    width: 48px;
+    height: 48px;
+}
+#twitter {
+    opacity:0.75;
+    width: 48px;
+    height: 48px;
+}
+#github {
+    opacity:0.75;
+    width: 48px;
+    height: 48px;
 }
