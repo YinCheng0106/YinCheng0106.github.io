@@ -11,7 +11,6 @@ h1 {
     height: 48px;
 }
 #title {
-    font-family: monospace;
     text-align: center;
     color: rgba(0, 0, 0, 0.75);
     font-size: 500%;
