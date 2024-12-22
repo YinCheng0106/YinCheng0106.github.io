@@ -1,10 +1,11 @@
 <script setup lang="ts">
+  import { Sun, Moon, Server } from 'lucide-vue-next';
   useSeoMeta({
     title: 'YinCheng',
     ogTitle: 'YinCheng',
-    description: '',
-    ogDescription: '',
-    ogImage: ''
+    description: '這是一個關於YinCheng的網站',
+    ogDescription: '這是一個關於YinCheng的網站',
+    ogImage: 'https://avatars.githubusercontent.com/u/99303523'
   });
 </script>
 
@@ -16,5 +17,15 @@
     </div>
     <NuxtRouteAnnouncer />
     <NuxtPage />
+    <div>
+      <NuxtFooter />
+    </div>
+    <div class="p-2 m-2">
+      <select class="rounded-xl text-xl float-right text-slate-950" v-model="$colorMode.preference">
+        <option value="light"><Sun />淺色</option>
+        <option value="dark"><Moon />深色</option>
+        <option value="system"><Server />系統</option>
+    </select>
+    </div>
   </div>
 </template>
