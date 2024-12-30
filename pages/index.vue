@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
     import RepoMenu from '../components/project.vue';
 </script>
 

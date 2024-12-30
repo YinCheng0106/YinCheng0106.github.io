@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
   import { Sun, Moon, Server } from 'lucide-vue-next';
   useSeoMeta({
     title: 'YinCheng',

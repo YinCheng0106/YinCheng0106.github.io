@@ -1,6 +1,6 @@
-<script lang="ts" setup>
+<script setup>
 import { ref } from 'vue';
-let id:number = 0;
+let id = 0;
 const repos = ref([
     { id: id++, name: "YINLA", url: "https://github.com/YINLA-TEAM/YINLA", description: "這是一隻Discord的BOT，不定時會更新，主要功能是檢視天氣、檢視地震(含推播功能)、文字翻譯、查詢中油油價(含推播功能)以及查詢中華職棒相關的功能" },
     { id: id++, name: "YINLA", url: "https://github.com/YINLA-TEAM/YINLA", description: "這是一隻Discord的BOT，不定時會更新，主要功能是檢視天氣、檢視地震(含推播功能)、文字翻譯、查詢中油油價(含推播功能)以及查詢中華職棒相關的功能" },
