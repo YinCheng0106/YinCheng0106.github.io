@@ -1,5 +1,5 @@
 <script setup>
-    import RepoMenu from '../components/Project.vue';
+    import RepoMenu from '../components/project.vue';
 </script>
 
 <template>
