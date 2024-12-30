@@ -1,5 +1,4 @@
 <script setup>
-  import { SpeedInsights } from "@vercel/speed-insights/nuxt";
   import Header from "../components/header.vue";
   import Footer from "../components/footer.vue";
 </script>
@@ -11,6 +10,5 @@
       <slot />
     </main>
     <Footer />
-    <SpeedInsights />
   </div>
 </template>
