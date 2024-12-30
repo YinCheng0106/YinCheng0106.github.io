@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    color: white;
-    background-color: hsla(0, 0%, 0%, 0.9);
-}
 .light-mode body {
     color: black;
     background-color: white;
