@@ -1,5 +1,5 @@
 <script setup>
-    import DarkMode from "darkmode.vue";
+    import DarkMode from "./DarkMode.vue";
 </script>
 
 <template>
