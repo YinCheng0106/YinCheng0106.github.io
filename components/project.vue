@@ -14,7 +14,7 @@ const repos = ref([
             <li v-for="r in repos" :key="r.id">
                 <div>
                     <a :href="r.url" target="_blank">
-                        <div class="p-2 m-2 md:h-36 border dark:border-gray-100 border-gray-500 rounded-xl dark:hover:bg-neutral-700 hover:bg-neutral-200 hover:h-38 duration-300 delay-75 ">
+                        <div class="p-2 m-2 md:h-36 border dark:border-gray-100 border-gray-500 rounded-xl dark:hover:bg-neutral-700 hover:bg-neutral-200 duration-300 delay-75 ">
                             <h2 class="m-2 font-bold text-xl">{{r.name}}</h2>
                             <p class="px-4 py-2 text-xs dark:text-gray-400 text-gray-700">{{r.description}}</p>
                         </div>
