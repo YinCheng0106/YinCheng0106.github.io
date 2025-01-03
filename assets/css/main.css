@@ -10,3 +10,10 @@
     color: white;
     background-color: hsla(0, 0%, 0%, 0.9);
 }
+
+a:hover {
+    color: rgb(209,213,219);
+    text-decoration: none;
+    transition-duration: 300ms;
+    transition-delay: 75ms;
+}

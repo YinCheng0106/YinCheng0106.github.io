@@ -1,5 +1,4 @@
 <script setup>
-    import { Sun, Moon, Server } from 'lucide-vue-next';
     import { useState } from '#app';
 
     const colorMode = useState('color-mode', () => 'dark');
@@ -24,7 +23,7 @@
 </script>
 
 <template>
-    <div class="m-4 mx-8 float-right">
+    <div class="m-4 mx-8 float-right ">
         <UDropdown :items="items" :popper="{ placement: 'left-start' }">
             <UButton :icon="colorMode === 'light' ? 'i-heroicons-sun' : 'i-heroicons-moon'" 
                 :color="colorMode === 'light' ? 'yellow' : 'gray'" 
