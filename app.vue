@@ -10,7 +10,7 @@
 
 <template>
   <div>
-    <NuxtLoadingIndicator :height="2"/>
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
