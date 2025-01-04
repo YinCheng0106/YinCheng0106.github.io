@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.light-mode body {
-  color: black;
-  background-color: white;
-}
-.dark-mode body {
-  color: white;
-  background-color: hsla(0, 0%, 0%, 0.9);
+body {
+  @apply dark:bg-black dark:text-white bg-white text-black;
 }
 
 .link:hover {
-  color: rgb(209, 213, 219);
+  @apply dark:text-gray-200 text-gray-600 ;
   text-decoration: none;
   transition-duration: 300ms;
   transition-delay: 75ms;
