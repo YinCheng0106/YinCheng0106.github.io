@@ -13,6 +13,7 @@
     "@headlessui/vue": "^1.7.23",
     "@nuxt/ui": "2.20.0",
     "@nuxtjs/color-mode": "3.5.2",
+    "@nuxtjs/mdc": "0.12.0",
     "@vercel/speed-insights": "^1.1.0",
     "lucide-vue-next": "^0.469.0",
     "motion": "^11.15.0",

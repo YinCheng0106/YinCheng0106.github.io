@@ -5,8 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-    <div
-        class="flex min-h-screen items-center font-mono">
+    <div class="flex min-h-screen items-center font-mono">
         <div class="mx-auto flex flex-wrap items-center p-4">
             <div class="w-full p-4 text-center md:w-1/2">
                 <div class="text-[10rem]">404</div>
