@@ -7,11 +7,15 @@ const id = route.params.id;
 
 <template>
   <ContentDoc :path="`/blog/${id}`">
+    <template #default="{ doc }">
+      <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
+      <ContentDoc class="p-4" />
+    </template>
     <template #not-found>
       <div class="flex md:my-24 items-center font-mono">
         <div class="mx-auto flex flex-wrap items-center p-4">
             <div class="w-full text-center md:w-1/2">
-                <div class="text-[10rem]">404</div>
+                <div class="text-[10rem]" aria-label="Error Code 404">404</div>
             </div>
             <div class="w-full p-4 text-center md:w-1/2 md:text-left">
                 <div class="mb-12 text-3xl"><del>你發現了一個神秘的通道</del></div>
@@ -24,3 +28,4 @@ const id = route.params.id;
     </template>
   </ContentDoc>
 </template>
+

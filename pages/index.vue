@@ -5,5 +5,6 @@ import RepoMenu from '../components/project.vue';
 <template>
 	<div>
 		<RepoMenu />
+		<ContentDoc />
 	</div>
 </template>

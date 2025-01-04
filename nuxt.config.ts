@@ -1,9 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   content: {
-    markdown: {
-      mdc: true,
-    },
+    
     navigation: {
       fields: ['title', 'description'],
     },
