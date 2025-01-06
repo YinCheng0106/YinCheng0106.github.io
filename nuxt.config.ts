@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   content: {
-    
     navigation: {
       fields: ['title', 'description'],
     },
