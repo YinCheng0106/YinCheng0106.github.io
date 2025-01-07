@@ -11,50 +11,52 @@
 </script>
 
 <template>
-  <div class="snowflakes" aria-hidden="true" :hidden="!snows">
-    <div class="snowflake">
-      <div class="inner">❅</div>
+  <div>
+    <div class="snowflakes" aria-hidden="true" :hidden="!snows">
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">冷</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">冷</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
+      <div class="snowflake">
+        <div class="inner">❅</div>
+      </div>
     </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
+    <div class="min-h-screen flex flex-col p-4">
+      <Header />
+      <main class="flex-grow p-4">
+        <slot />
+      </main>
+      <Footer />
+      <SpeedInsights />
     </div>
-    <div class="snowflake">
-      <div class="inner">冷</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">冷</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-    <div class="snowflake">
-      <div class="inner">❅</div>
-    </div>
-  </div>
-  <div class="min-h-screen flex flex-col p-4">
-    <Header />
-    <main class="flex-grow p-4">
-      <slot />
-    </main>
-    <Footer />
-    <SpeedInsights />
   </div>
 </template>
