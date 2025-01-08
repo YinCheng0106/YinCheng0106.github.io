@@ -1,9 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   content: {
-    navigation: {
-      fields: ['title', 'description'],
+    highlight: {
+      theme: {
+        default: 'one-dark-pro',
+        dark: 'github-dark',
+      }
     },
+    navigation: {
+      fields: ['title', 'description', 'date'],
+    },
+
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },

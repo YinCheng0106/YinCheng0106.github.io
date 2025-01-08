@@ -8,6 +8,7 @@
         <div class="flex flex-wrap gap-2">
             <NuxtLink class="link" to="/about">關於</NuxtLink>
             <NuxtLink class="link" to="/terms">條款</NuxtLink>
+            <NuxtLink class="link" to="https://github.com/YinCheng0106/YinCheng0106.github.io">GitHub</NuxtLink>
         </div>
         <DarkMode />
     </div>

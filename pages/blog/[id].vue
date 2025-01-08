@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router';
+import { Clock } from 'lucide-vue-next';
 
 const route = useRoute();
 const id = route.params.id;
@@ -9,7 +10,8 @@ const id = route.params.id;
   <ContentDoc :path="`/blog/${id}`">
     <template #default="{ doc }">
       <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
-      <ContentDoc class="p-4" />
+      <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ doc.date }}</p>
+      <ContentRenderer class="mx-4 my-8" :value="doc" />
     </template>
     <template #not-found>
       <div class="flex md:my-24 items-center font-mono">
