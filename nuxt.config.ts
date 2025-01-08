@@ -28,5 +28,5 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxtjs/color-mode', '@nuxt/ui', '@nuxtjs/mdc', '@nuxt/content'],
+  modules: ['@nuxtjs/color-mode', '@nuxt/ui', '@nuxtjs/mdc', '@nuxt/content', '@nuxt/image'],
 })
