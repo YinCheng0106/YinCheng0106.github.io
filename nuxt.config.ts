@@ -6,7 +6,13 @@ export default defineNuxtConfig({
     },
   },
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      htmlAttrs: {
+        lang: 'zh-Hant'
+      },
+      charset: 'utf-8'
+    }
   },
   colorMode: {
     preference: 'system',

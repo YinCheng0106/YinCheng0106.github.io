@@ -26,7 +26,8 @@
         <UDropdown :open-delay="300" :close-delay="75" :items="items" :popper="{ placement: 'left-start' }">
             <UButton class="duration-300 delay-75" :icon="colorMode === 'light' ? 'i-heroicons-sun' : 'i-heroicons-moon'" 
                 :color="colorMode === 'light' ? 'yellow' : 'gray'" 
-                :variant="colorMode === 'light' ? 'solid' : 'ghost'" />
+                :variant="colorMode === 'light' ? 'solid' : 'ghost'" 
+                aria-label="DarkMode" />
         </UDropdown>
     </div>
 </template>
