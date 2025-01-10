@@ -4,10 +4,26 @@ import { Clock } from 'lucide-vue-next';
 
 const route = useRoute();
 const id = route.params.id;
+
+const nuxtApp = useNuxtApp();
+  const loading = ref(false);
+  nuxtApp.hook("page:start", () => {
+    loading.value = true;
+  });
+  nuxtApp.hook("page:finish", () => {
+    loading.value = false;
+  });
 </script>
 
 <template>
   <div>
+    <div v-if="loading">
+      <div class="skeletion h-8 w-28"></div>
+      <div class="skeletion h-4 w-28"></div>
+      <div class="skeletion h-4 w-28"></div>
+      <div class="skeletion h-4 w-28"></div>
+      <div class="skeletion h-4 w-28"></div>
+    </div>
     <ContentDoc :path="`/blog/${id}`">
       <template #default="{ doc }">
         <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>

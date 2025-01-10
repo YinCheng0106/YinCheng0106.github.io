@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  srcDir: 'src/',
+  modulesDir: ['../../node_modules'],
   content: {
     highlight: {
       theme: {
@@ -12,7 +14,6 @@ export default defineNuxtConfig({
     navigation: {
       fields: ['title', 'description', 'date'],
     },
-
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
