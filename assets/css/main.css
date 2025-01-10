@@ -30,8 +30,8 @@ h6 {
   @apply text-base font-bold;
 } 
 
-.link:hover {
-  @apply dark:text-gray-200 text-gray-600 ;
+._link:hover {
+  @apply dark:text-gray-200 text-gray-600;
   text-decoration: none;
   transition-duration: 300ms;
   transition-delay: 75ms;

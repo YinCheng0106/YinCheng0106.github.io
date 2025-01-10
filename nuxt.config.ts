@@ -5,7 +5,9 @@ export default defineNuxtConfig({
       theme: {
         default: 'one-dark-pro',
         dark: 'github-dark',
-      }
+        light: 'github-light'
+      },
+      preload: ['js', 'html', 'css', 'py'],
     },
     navigation: {
       fields: ['title', 'description', 'date'],
@@ -35,5 +37,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['@nuxtjs/color-mode', '@nuxt/ui', '@nuxtjs/mdc', '@nuxt/content', '@nuxt/image'],
+  modules: [
+    '@nuxtjs/color-mode',
+    '@nuxt/ui',
+    '@nuxtjs/mdc',
+    '@nuxt/content',
+    '@nuxt/image'
+  ],
 })
