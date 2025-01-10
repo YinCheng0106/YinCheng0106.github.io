@@ -19,7 +19,6 @@
     "@tailwindcss/typography": "^0.5.16",
     "@vercel/speed-insights": "^1.1.0",
     "lucide-vue-next": "^0.469.0",
-    "motion": "^11.15.0",
     "nuxt": "3.14.1592",
     "vue": "latest",
     "vue-router": "latest"

@@ -9,6 +9,9 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
+  daisyui: {
+    themes: false,
+  },
   theme: {
     extend: {},
   },
