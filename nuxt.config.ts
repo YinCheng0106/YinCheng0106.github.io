@@ -3,13 +3,17 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   modulesDir: ['../../node_modules'],
   content: {
+    markdown: {
+      mdc: true,
+    },
     highlight: {
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'c', 'cpp', 'java'],
       theme: {
         default: 'one-dark-pro',
         dark: 'github-dark',
         light: 'github-light'
       },
-      preload: ['js', 'html', 'css', 'py'],
+      preload: ['javascript', 'html', 'css', 'python'],
     },
     navigation: {
       fields: ['title', 'description', 'date'],
