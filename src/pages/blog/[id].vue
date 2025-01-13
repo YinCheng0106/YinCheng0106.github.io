@@ -16,7 +16,7 @@ const nuxtApp = useNuxtApp();
 </script>
 
 <template>
-  <div>
+  <div class="max-w-2xl w-screen m-auto">
     <div v-if="loading">
       <div class="skeletion h-8 w-28"></div>
       <div class="skeletion h-4 w-28"></div>
