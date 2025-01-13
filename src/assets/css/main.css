@@ -7,11 +7,12 @@ body {
   @apply dark:bg-black dark:text-white bg-white text-black transition-colors duration-200;
 }
 
+._link {
+  @apply font-bold ease-in-out transition no-underline duration-300 delay-75;
+}
+
 ._link:hover {
-  @apply dark:text-gray-200 text-gray-600;
-  text-decoration: none;
-  transition-duration: 300ms;
-  transition-delay: 75ms;
+  @apply dark:text-gray-300 text-gray-500;
 }
 
 /** Snowflakes **/

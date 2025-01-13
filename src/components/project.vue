@@ -26,7 +26,7 @@ const repos = ref([
 				<div>
 					<a :href="r.url" target="_blank">
 						<div
-							class="p-2 m-2 md:h-36 border dark:border-gray-500 dark:hover:border-gray-100 rounded-xl border-gray-400 hover:border-gray-800 dark:hover:bg-neutral-700 dark:action:border-gray-700 action:border-gray-500 hover:bg-neutral-200 dark:active:bg-neutral-600 active:bg-neutral-300 duration-300 delay-75">
+							class="p-2 m-2 md:h-36 border dark:border-gray-500 dark:hover:border-gray-100 rounded-xl border-gray-400 hover:border-gray-800 dark:hover:bg-neutral-700 dark:action:border-gray-700 action:border-gray-500 hover:bg-neutral-200 dark:active:bg-neutral-600 active:bg-neutral-300 duration-300 delay-75 transition ease-in-out">
 							<h2 class="m-2 font-bold text-xl">{{ r.name }}</h2>
 							<p class="px-4 py-2 text-xs dark:text-gray-400 text-gray-700">
 								{{ r.description }}
