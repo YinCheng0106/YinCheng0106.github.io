@@ -1,36 +1,43 @@
 <script setup lang="ts">
-import { jsx } from 'vue/jsx-runtime';
-
-const props = defineProps({
+defineProps({
     code: {
         type: String,
-        default: ''
+        default: '',
     },
     language: {
         type: String,
-        default: null
+        default: null,
     },
     filename: {
         type: String,
-        default: null
+        default: null,
     },
     highlights: {
         type: Array as () => number[],
-        default: () => []
+        default: () => [],
     },
     meta: {
         type: String,
-        default: null
+        default: null,
     },
     class: {
         type: String,
-        default: null
-    }
-})
+        default: null,
+    },
+});
 </script>
 
 <template>
-    <pre :class="props.class"><slot /></pre>
+    <div>
+    <div v-if="$props.filename" class="bg-gray-300 font-mono text-sm border
+        border-gray-400 py-2 px-3 rounded-t-md text-black dark:bg-gray-900 dark:text-white dark:border-gray-800 dark:border">
+        {{ $props.filename }}
+    </div>
+    <pre :class="{
+        [$props.class as string]: true,
+        'mt-0 rounded-t-none': $props.filename,
+    }"><slot /></pre>
+    </div>
 </template>
 
 <style>

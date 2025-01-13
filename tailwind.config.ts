@@ -9,15 +9,12 @@ export default {
     "./app.vue",
     "./error.vue",
   ],
-  daisyui: {
-    themes: false,
-  },
   theme: {
     extend: {},
   },
   plugins: [
     require('@tailwindcss/typography'),
-    // require('daisyui'),
+    
   ],
 }
 

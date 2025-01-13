@@ -4,16 +4,12 @@ export default defineNuxtConfig({
   modulesDir: ['../../node_modules'],
   content: {
     markdown: {
-      mdc: true,
+      rehypePlugins: [
+        'rehype-raw',
+      ],
     },
     highlight: {
-      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'c', 'cpp', 'java'],
-      theme: {
-        default: 'one-dark-pro',
-        dark: 'github-dark',
-        light: 'github-light'
-      },
-      preload: ['javascript', 'html', 'css', 'python'],
+      theme: 'github-dark',
     },
     navigation: {
       fields: ['title', 'description', 'date'],
@@ -29,8 +25,7 @@ export default defineNuxtConfig({
     }
   },
   colorMode: {
-    preference: 'system',
-    fallback: 'dark',
+    preference: 'dark',
     classSuffix: ''
   },
   compatibilityDate: '2024-11-01',
@@ -45,8 +40,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/color-mode',
     '@nuxt/ui',
-    '@nuxtjs/mdc',
     '@nuxt/content',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/mdc',
   ],
 })
