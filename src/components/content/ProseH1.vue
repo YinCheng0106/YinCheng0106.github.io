@@ -8,10 +8,10 @@ const generate = computed(() => props.id && ((typeof headings?.anchorLinks === '
 </script>
 
 <template>
-    <h1 class="text-black dark:text-white" :id="props.id">
+    <h2 class="text-black dark:text-white" :id="props.id">
         <a class="no-underline" v-if="props.id && generate" :href="`#${props.id}`">
             <slot />
         </a>
         <slot v-else />
-    </h1>
+    </h2>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <blockquote class="">
+    <blockquote class="content-none">
         <slot />
 </blockquote>
 </template>

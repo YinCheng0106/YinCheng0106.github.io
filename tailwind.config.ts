@@ -10,7 +10,17 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            blockquote: {
+              quotes: "none",
+            },
+          },
+        },
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -35,5 +35,5 @@ const refinedSrc = computed(() => {
 </script>
 
 <template>
-    <component class="flex" format="webp" :is="ImageComponent" :src="refinedSrc" :alt="props.alt" :width="props.width" :height="props.height" />
+    <component format="webp" :is="ImageComponent" :src="refinedSrc" :alt="props.alt" :width="props.width" :height="props.height" />
 </template>

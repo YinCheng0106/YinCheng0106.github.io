@@ -1,5 +1,5 @@
 <template>
-    <table>
+    <table class="table-auto">
         <slot />
     </table>
 </template>
