@@ -15,7 +15,12 @@
         </div>
       </NuxtLink>
       <div class="justify-center p-2 gap-2 text-bold">
-        <NuxtLink class="_link" to="/blog">部落格</NuxtLink>
+        
+        <NuxtLink to="/blog">
+          <InteractiveHoverButton
+            text="部落格"
+          />
+      </NuxtLink>
       </div>
     </div>
   </div>

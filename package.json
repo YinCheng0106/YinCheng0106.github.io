@@ -23,6 +23,7 @@
     "@vueuse/motion": "^2.2.6",
     "lucide-vue-next": "^0.469.0",
     "nuxt": "3.14.1592",
+    "qss": "^3.0.0",
     "rehype-raw": "^7.0.0",
     "ufo": "^1.5.4",
     "vue": "latest",
