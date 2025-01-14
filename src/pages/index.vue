@@ -1,9 +1,9 @@
 <script setup>
-import RepoMenu from '../components/project.vue';
+import RepoMenu from "../components/project.vue";
 </script>
 
 <template>
-	<div>
-		<RepoMenu />
-	</div>
+  <div>
+    <RepoMenu />
+  </div>
 </template>
