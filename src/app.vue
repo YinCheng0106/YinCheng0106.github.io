@@ -1,10 +1,10 @@
-<script setup>
+<script setup lang="ts">
 useSeoMeta({
   title: "YinCheng",
   ogTitle: "YinCheng",
   description: "這是一個關於YinCheng的網站",
   ogDescription: "這是一個關於YinCheng的網站",
-  ogImage: "https://avatars.githubusercontent.com/u/99303523",
+  ogImage: "~/public/SEOimg/home.png",
 });
 </script>
 
