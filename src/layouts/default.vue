@@ -27,7 +27,7 @@
       :hidden="!snows"
       :min-radius="0.2"
       :max-radius="3"
-      :speed="0.75"
+      :speed="0.5"
     />
     <ParticlesBg
       class="fixed inset-0 pointer-events-none"
