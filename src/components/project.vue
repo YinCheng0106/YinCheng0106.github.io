@@ -28,9 +28,9 @@ const repos = ref([
 <template>
   <div class="font-mono">
     <h1 class="pb-2 text-2xl font-bold">REPOS</h1>
-    <ul class="md:grid md:grid-cols-2 xl:grid-cols-3">
+    <ul class="grid md:grid-cols-2 xl:grid-cols-3 gap-2">
       <li v-for="r in repos" :key="r.id">
-        <div class="m-2 h-28">
+        <div class="h-28 max-md:h-32">
           <a :href="r.url" target="_blank">
             <CardSpotlight class="p-2 flex items-center" :gradient-color="isDark ? '#363636' : '#C9C9C9'">
               <h2 class="m-2 font-bold text-xl">{{ r.name }}</h2>
