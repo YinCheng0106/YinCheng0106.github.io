@@ -1,6 +1,8 @@
-<script setup>
+<script lang="ts" setup>
 import { useRoute } from 'vue-router';
 import { Clock } from 'lucide-vue-next';
+
+defineOgImageComponent('BlogPost');
 
 const route = useRoute();
 const id = route.params.id;

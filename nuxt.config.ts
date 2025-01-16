@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  site: {
+    url: process.env.NUXT_SITE_URL,
+    name: 'YinCheng',
+  },
   srcDir: 'src/',
   modulesDir: ['../../node_modules'],
   content: {
@@ -43,6 +47,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxtjs/mdc',
     '@vueuse/motion/nuxt',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    'nuxt-og-image',
+    '@nuxtjs/seo',
   ],
 })
