@@ -4,7 +4,7 @@ useSeoMeta({
   ogTitle: "YinCheng",
   description: "這是一個關於YinCheng的網站",
   ogDescription: "這是一個關於YinCheng的網站",
-  ogImage: "https://i.imgur.com/a9WkP5S.png",
+  ogImage: '/index.png',
   twitterCard: 'summary_large_image',
 });
 </script>

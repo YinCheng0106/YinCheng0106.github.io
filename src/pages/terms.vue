@@ -4,6 +4,7 @@ useSeoMeta({
   ogTitle: "條款 | YinCheng",
   description: "關於YinCheng網站的服務條款以及隱私條款",
   ogDescription: "關於YinCheng網站的服務條款以及隱私條款",
+  ogImage: '/term.png',
   twitterCard: 'summary_large_image',
 });
 </script>
