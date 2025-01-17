@@ -2,10 +2,7 @@
 import { useRoute } from 'vue-router';
 import { Clock } from 'lucide-vue-next';
 
-defineOgImageComponent('Frame', {
-  username: 'YinCheng',
-  image: '/blog.png',
-});
+defineOgImageComponent('BlogPost');
 
 const route = useRoute();
 const id = route.params.id;
