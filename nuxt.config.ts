@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ogImage: {
+    fonts: [
+      'Noto+Sans+SC:400'
+    ]
+  },
   site: {
     url: process.env.NUXT_SITE_URL,
     name: 'YinCheng',
@@ -50,5 +55,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-og-image',
     '@nuxtjs/seo',
+    'nuxt-site-config',
   ],
 })
