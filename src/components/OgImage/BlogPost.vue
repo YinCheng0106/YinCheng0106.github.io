@@ -7,6 +7,7 @@ withDefaults(defineProps<{
 }>(), {
   title: 'title',
   description: 'description',
+  author: 'YinCheng',
   logo: 'https://avatars.githubusercontent.com/u/99303523'
 })
 </script>
@@ -29,9 +30,10 @@ withDefaults(defineProps<{
             {{ description }}
           </p>
         </div>
-        <p class="justify-end text-2xl pt-20 px-10 font-bold mb-0">
-          yincheng.vercel.app
-        </p>
+        <div class="flex justify-between items-center p-4 mt-30 mx-10 border-t-2 border-neutral-400 text-2xl">
+          <span>{{ author }}</span>
+          <span>yincheng.vercel.app</span>
+        </div>
       </div>
     </div>
   </div>
