@@ -3,7 +3,7 @@ definePageMeta({
   layout: false,
 });
 useSeoMeta({
-  title: "404 Not Found | YinCheng",
+  title: "404 Not Found",
   ogTitle: "404 Not Found | YinCheng",
   description: "你發現了一個神秘的通道",
   ogDescription: "你發現了一個神秘的通道",

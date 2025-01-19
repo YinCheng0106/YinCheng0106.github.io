@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: "部落格 | YinCheng",
+  title: "部落格",
   ogTitle: "部落格 | YinCheng",
   description: "這是YinCheng的個人部落格",
   ogDescription: "這是YinCheng的個人部落格",
