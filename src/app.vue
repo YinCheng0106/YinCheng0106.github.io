@@ -2,7 +2,9 @@
 useSeoMeta({
   title: "YinCheng",
   ogTitle: "YinCheng",
-  description: "這是一個關於YinCheng的網站",
+  author: "YinCheng",
+  keywords: "YinCheng, yincheng, 胤呈, yincheng0106",
+  description: "這是一個關於 YinCheng 的網站，在這裡可以看到 YinCheng 的 GitHub Repositories 以及 YinCheng 的 專屬部落格",
   ogDescription: "這是一個關於YinCheng的網站",
   twitterCard: 'summary_large_image',
 });

@@ -53,8 +53,6 @@ export default defineNuxtConfig({
     '@nuxtjs/mdc',
     '@vueuse/motion/nuxt',
     '@nuxtjs/tailwindcss',
-    'nuxt-og-image',
     '@nuxtjs/seo',
-    'nuxt-site-config',
   ],
 })
