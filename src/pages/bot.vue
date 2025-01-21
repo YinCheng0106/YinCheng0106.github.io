@@ -1,4 +1,13 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: "YINLA BOT",
+  ogTitle: "YINLA BOT | YinCheng",
+  description: "YINLA 是一隻 Discord 機器人，提供了許多有趣的功能，例如地震、氣象、中華職棒、翻譯等功能，歡迎邀請此機器人加入你的伺服器，為你的伺服器增添一些色彩",
+  ogDescription: "YINLA 是一隻 Discord 機器人，提供了許多有趣的功能，例如地震、氣象、中華職棒、翻譯等功能，歡迎邀請此機器人加入你的伺服器，為你的伺服器增添一些色彩",
+  ogImage: '/bot.png',
+  twitterCard: 'summary_large_image',
+});
+
 await navigateTo(
   'https://discord.com/oauth2/authorize?client_id=914150570250625044&permissions=1759214307376375&integration_type=0&scope=applications.commands+bot', {
   external: true,
