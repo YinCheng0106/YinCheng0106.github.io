@@ -2,6 +2,14 @@
 import { useRoute } from 'vue-router';
 import { Clock } from 'lucide-vue-next';
 
+useSeoMeta({
+  title: "404 Not Found",
+  ogTitle: "404 Not Found | YinCheng",
+  description: "此文章不存在",
+  ogDescription: "此文章不存在",
+  twitterCard: 'summary_large_image',
+}); // default: 404
+
 defineOgImageComponent('BlogPost');
 
 const route = useRoute();
