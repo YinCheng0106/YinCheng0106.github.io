@@ -3,7 +3,8 @@
     <!-- Trigger -->
     <NuxtLink
       :to="url"
-      :class="cn('text-black dark:text-white', props.linkClass)"
+      :class="cn('text-green-500 _link', props.linkClass)"
+      :target="props.target"
       @mousemove="handleMouseMove"
       @mouseenter="showPreview"
       @mouseleave="hidePreview"
@@ -49,6 +50,7 @@ interface BaseProps {
   linkClass?: string;
   width?: number;
   height?: number;
+  target?: string;
 }
 
 // Props for static image mode
@@ -73,6 +75,7 @@ const props = withDefaults(defineProps<Props>(), {
   url: "",
   width: 200,
   height: 125,
+  target: "_blank",
 });
 
 const isVisible = ref(false);

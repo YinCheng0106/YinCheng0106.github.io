@@ -17,7 +17,7 @@ useSeoMeta({
         這個網站主要是想要來放一些自己的專案，以及自己的一些資訊還有部落格。
       </p>
       <p>
-        這個網頁的框架是利用 <NuxtLink class="_link text-green-500" to="https://nuxt.com/">Nuxt 3</NuxtLink> 以及 <NuxtLink class="_link text-green-500" to="https://vuejs.org/">Vue</NuxtLink> 所製作而成的，再結合了 <NuxtLink class="_link text-green-500" to="https://tailwindcss.com/">Tailwind CSS</NuxtLink> 來做網頁的美化。
+        這個網頁的框架是利用 <LinkPreview url="https://nuxt.com/">Nuxt 3</LinkPreview> 以及 <LinkPreview url="https://vuejs.org/">Vue</LinkPreview> 所製作而成的，再結合了 <LinkPreview url="https://tailwindcss.com/">Tailwind CSS</LinkPreview> 來做網頁的美化。
       </p>
     </div>
     <h2 class="text-2xl font-bold mt-4">Developer 開發人員</h2>
