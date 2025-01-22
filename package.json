@@ -24,7 +24,6 @@
     "@vueuse/motion": "^2.2.6",
     "lucide-vue-next": "^0.469.0",
     "nuxt": "^3.15.2",
-    "nuxt-og-image": "^4.0.3",
     "nuxt-site-config": "^3.0.6",
     "qss": "^3.0.0",
     "rehype-raw": "^7.0.0",
