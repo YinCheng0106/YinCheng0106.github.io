@@ -12,6 +12,28 @@ useSeoMeta({
 <template>
   <div>
     <h2 class="text-2xl font-bold">About 關於</h2>
-    <p class="p-2 mx-2">這是一個關於 YinCheng 的關於網頁</p>
+    <div class="flex flex-wrap m-2 text-md dark:text-gray-300 text-gray-800 gap-1">
+      <p>
+        這個網站主要是想要來放一些自己的專案，以及自己的一些資訊還有部落格。
+      </p>
+      <p>
+        這個網頁的框架是利用 <NuxtLink class="_link text-green-500" to="https://nuxt.com/">Nuxt 3</NuxtLink> 以及 <NuxtLink class="_link text-green-500" to="https://vuejs.org/">Vue</NuxtLink> 所製作而成的，再結合了 <NuxtLink class="_link text-green-500" to="https://tailwindcss.com/">Tailwind CSS</NuxtLink> 來做網頁的美化。
+      </p>
+    </div>
+    <h2 class="text-2xl font-bold mt-4">Developer 開發人員</h2>
+    <div class="flex items-center justify-center mt-4 gap-4">
+      <FlipCard
+        description="來自臺灣，目前就讀資訊工程學系，往前端工程師前進"
+        image="https://avatars.githubusercontent.com/u/99303523"
+        rotate="y"
+        subtitle="Who is YinCheng ?"
+        title="YinCheng"
+        tag="網頁開發兼管理者"
+        github="https://github.com/YinCheng0106"
+        instagram="https://www.instagram.com/_yincheng_/"
+        threads="https://www.threads.net/@_yincheng_"
+        twitter="https://x.com/Yin_Cheng0106"
+      />
+    </div>
   </div>
 </template>

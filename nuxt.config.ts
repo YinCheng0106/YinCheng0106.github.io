@@ -37,6 +37,11 @@ export default defineNuxtConfig({
     preference: 'dark',
     classSuffix: ''
   },
+  icon: {
+    serverBundle: {
+      collections: ['uil', 'mdi', 'bi']
+    }
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
@@ -54,5 +59,6 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/seo',
+    '@nuxt/icon',
   ],
 })
