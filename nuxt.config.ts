@@ -60,5 +60,6 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/seo',
     '@nuxt/icon',
+    'nuxt-toc',
   ],
 })

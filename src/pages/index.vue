@@ -18,7 +18,7 @@ useSeoMeta({
         :duration="0.75"
         class="p-8"
       >
-        <div class="py-16 max-md:py-8 max-lg:py-12 flex items-center justify-center">
+        <div class="py-16 max-md:pb-12 max-md:pt-4 max-lg:py-12 flex items-center justify-center">
           <h2 class="text-6xl font-bold font-mono">Hi, 你好</h2>
         </div>
         <RepoMenu />

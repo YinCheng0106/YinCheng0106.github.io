@@ -25,6 +25,7 @@
     "lucide-vue-next": "^0.469.0",
     "nuxt": "^3.15.2",
     "nuxt-site-config": "^3.0.6",
+    "nuxt-toc": "2.7.2",
     "qss": "^3.0.0",
     "rehype-raw": "^7.0.0",
     "ufo": "^1.5.4",

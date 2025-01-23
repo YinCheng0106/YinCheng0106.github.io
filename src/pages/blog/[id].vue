@@ -26,7 +26,7 @@ const nuxtApp = useNuxtApp();
 </script>
 
 <template>
-  <div class="max-w-3xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
+  <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
     <div v-if="loading">
       <div class="skeletion h-8 w-28"></div>
       <div class="skeletion h-4 w-28"></div>
@@ -36,9 +36,20 @@ const nuxtApp = useNuxtApp();
     </div>
     <ContentDoc :path="`/blog/${id}`">
       <template #default="{ doc }">
-        <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
-        <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ doc.date }}</p>
-        <ContentRenderer class="mx-4 my-8 dark:text-white text-black prose" :value="doc"  />
+        <div class="">
+          <div class="">
+            <div>
+              <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
+              <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ doc.date }}</p>
+            </div>
+            <div class="mx-4 my-8">
+              <ContentRenderer class="dark:text-white text-black prose" :value="doc"  />
+            </div>
+          </div>
+          <div class="fixed top-40 left-10 max-md:hidden w-32">
+            <TableOfContents title="目錄" />
+          </div>
+        </div>
       </template>
       <template #not-found>
         <div class="flex md:my-24 items-center font-mono">
@@ -59,3 +70,16 @@ const nuxtApp = useNuxtApp();
   </div>
 </template>
 
+<style>
+.toc-item {
+  @apply border-l-2 pl-2 line-clamp-1
+}
+
+.active-toc-item {
+  @apply text-blue-400 border-blue-400
+}
+
+.toc-sublist-item {
+  @apply pl-4
+}
+</style>
