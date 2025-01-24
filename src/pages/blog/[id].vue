@@ -14,36 +14,23 @@ defineOgImageComponent('BlogPost');
 
 const route = useRoute();
 const id = route.params.id;
-
-const nuxtApp = useNuxtApp();
-  const loading = ref(false);
-  nuxtApp.hook("page:start", () => {
-    loading.value = true;
-  });
-  nuxtApp.hook("page:finish", () => {
-    loading.value = false;
-  });
 </script>
 
 <template>
   <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
-    <div v-if="loading">
-      <div class="skeletion h-8 w-28"></div>
-      <div class="skeletion h-4 w-28"></div>
-      <div class="skeletion h-4 w-28"></div>
-      <div class="skeletion h-4 w-28"></div>
-      <div class="skeletion h-4 w-28"></div>
-    </div>
     <ContentDoc :path="`/blog/${id}`">
       <template #default="{ doc }">
-        <div class="">
-          <div class="">
+        <div>
+          <div>
             <div>
               <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
               <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ doc.date }}</p>
+              <div v-for="tag in doc.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
+                <p class="dark:text-gray-400 text-gray-700 font-mono"># {{ tag }}</p>
+              </div>
             </div>
-            <div class="mx-4 my-8">
-              <ContentRenderer class="dark:text-white text-black prose" :value="doc"  />
+            <div class="mx-4 my-6">
+              <ContentRenderer class="dark:text-white text-black prose" :value="doc" />
             </div>
           </div>
           <div class="fixed top-40 left-10 max-md:hidden w-32">
@@ -72,14 +59,23 @@ const nuxtApp = useNuxtApp();
 
 <style>
 .toc-item {
-  @apply border-l-2 pl-2 line-clamp-1
+  @apply border-l-2 pl-2 line-clamp-1 text-sm
 }
 
 .active-toc-item {
-  @apply text-blue-400 border-blue-400
+  @apply text-blue-400 border-blue-400 font-bold
 }
 
 .toc-sublist-item {
-  @apply pl-4
+  @apply pl-6
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  @apply scroll-m-24;
 }
 </style>
