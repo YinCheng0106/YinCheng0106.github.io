@@ -1,6 +1,16 @@
 <script lang="ts" setup>
 import { useRoute } from 'vue-router';
 import { Clock } from 'lucide-vue-next';
+import { DateTime } from 'luxon';
+
+const route = useRoute();
+const id = route.params.id;
+const dateFormat = 'yyyy-MM-dd';
+const dateTimeFormat = `${dateFormat} HH:mm`;
+
+const dateFormater = (date: string, format: string) => {
+  return DateTime.fromISO(date).toLocal().toFormat(format);
+}
 
 useSeoMeta({
   title: "404 Not Found",
@@ -11,9 +21,6 @@ useSeoMeta({
 }); // default: 404
 
 defineOgImageComponent('BlogPost');
-
-const route = useRoute();
-const id = route.params.id;
 </script>
 
 <template>
@@ -24,7 +31,7 @@ const id = route.params.id;
           <div>
             <div>
               <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
-              <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ doc.date }}</p>
+              <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(doc.published_at, dateTimeFormat) }}</p>
               <div v-for="tag in doc.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
                 <p class="dark:text-gray-400 text-gray-700 font-mono"># {{ tag }}</p>
               </div>

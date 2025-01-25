@@ -21,7 +21,7 @@ export default defineNuxtConfig({
       theme: 'github-dark',
     },
     navigation: {
-      fields: ['title', 'description', 'date', 'tags'],
+      fields: ['title', 'description', 'published_at', 'tags'],
     },
   },
   app: {
