@@ -1,14 +1,4 @@
 <script setup lang="ts">
-import { Clock } from 'lucide-vue-next';
-import { DateTime } from 'luxon';
-
-const dateFormat = 'yyyy-MM-dd';
-const dateTimeFormat = `${dateFormat} HH:mm`;
-
-const dateFormater = (date: string, format: string) => {
-  return DateTime.fromISO(date).toLocal().toFormat(format);
-}
-
 useSeoMeta({
   title: "部落格",
   ogTitle: "部落格 | YinCheng",
@@ -17,6 +7,14 @@ useSeoMeta({
   ogImage: '/blog.png',
   twitterCard: 'summary_large_image',
 });
+
+import { Clock } from 'lucide-vue-next';
+import { DateTime } from 'luxon';
+
+const dateFormat = 'yyyy-MM-dd';
+const dateFormater = (date: string, format: string) => {
+  return DateTime.fromISO(date).toLocal().toFormat(format);
+}
 </script>
 
 <template>

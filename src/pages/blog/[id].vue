@@ -25,7 +25,7 @@ defineOgImageComponent('BlogPost');
 
 <template>
   <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
-    <ContentDoc :path="`/blog/${id}`">
+    <ContentRenderer :path="`/blog/${id}`">
       <template #default="{ doc }">
         <div>
           <div>
@@ -60,7 +60,7 @@ defineOgImageComponent('BlogPost');
           </div>
       </div>
       </template>
-    </ContentDoc>
+    </ContentRenderer>
   </div>
 </template>
 
