@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import { Clock } from 'lucide-vue-next';
+import { DateTime } from 'luxon';
+
+const dateFormat = 'yyyy-MM-dd';
+const dateTimeFormat = `${dateFormat} HH:mm`;
+
+const dateFormater = (date: string, format: string) => {
+  return DateTime.fromISO(date).toLocal().toFormat(format);
+}
 
 useSeoMeta({
   title: "部落格",
@@ -26,7 +34,7 @@ useSeoMeta({
             </p>
           </div>
           <p class="flex flex-wrap items-center px-4 text-xs dark:text-gray-400 text-gray-700">
-            <Clock class="mr-1" :size="16" :stroke-width="2.25" />{{ blog.date }}
+            <Clock class="mr-1" :size="16" :stroke-width="2.25" />{{ dateFormater(blog.published_at, dateFormat) }}
           </p>
         </NuxtLink>
       </div>
