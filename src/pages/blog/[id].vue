@@ -11,42 +11,35 @@ const dateTimeFormat = `${dateFormat} HH:mm`;
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
+const { data: posts } = await useAsyncData('blog', () => 
+  queryCollection('blog')
+  .path(`/blog/${ id }`)
+  .first());
 
 useSeoMeta({
-  title: "404 Not Found",
-  ogTitle: "404 Not Found | YinCheng",
-  description: "此文章不存在",
-  ogDescription: "此文章不存在",
+  title: `${ posts.value?.title }`,
+  ogTitle: `${ posts.value?.title } | YinCheng`,
+  description: posts.value?.description,
+  ogDescription: posts.value?.description,
   twitterCard: 'summary_large_image',
-}); // default: 404
+});
+console.log(posts);
 
 defineOgImageComponent('BlogPost');
 </script>
 
 <template>
   <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
-    <ContentRenderer :path="`/blog/${id}`">
-      <template #default="{ doc }">
-        <div>
-          <div>
-            <div>
-              <h1 class="text-4xl font-bold font-sans m-2">{{ doc.title }}</h1>
-              <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(doc.published_at, dateTimeFormat) }}</p>
-              <div v-for="tag in doc.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
-                <p class="dark:text-gray-400 text-gray-700 font-mono"># {{ tag }}</p>
-              </div>
-            </div>
-            <div class="mx-4 my-6">
-              <ContentRenderer class="dark:text-white text-black prose" :value="doc" />
-            </div>
-          </div>
-          <div class="fixed top-40 left-10 max-md:hidden w-32">
-            <TableOfContents title="目錄" />
-          </div>
-        </div>
-      </template>
-      <template #not-found>
-        <div class="flex md:my-24 items-center font-mono">
+    <div>
+      <h1 class="text-4xl font-bold font-sans m-2">{{ posts.title }}</h1>
+      <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(posts.published_at, dateTimeFormat) }}</p>
+      <div v-for="tag in posts.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
+        <p class="dark:text-gray-400 text-gray-700 font-mono"># {{ tag }}</p>
+      </div>
+    </div>
+    <div class="mx-4 my-6">
+      <ContentRenderer class="text-black dark:text-white prose" :value="posts" v-if="posts" :prose="true" />
+      <div class="flex md:my-24 items-center font-mono" v-else>
           <div class="mx-auto flex flex-wrap items-center p-4">
               <div class="w-full text-center md:w-1/2">
                   <div class="text-[10rem]" aria-label="Error Code 404">404</div>
@@ -58,31 +51,7 @@ defineOgImageComponent('BlogPost');
                       回 Blog</NuxtLink>
               </div>
           </div>
-      </div>
-      </template>
-    </ContentRenderer>
+        </div> 
+    </div>
   </div>
 </template>
-
-<style>
-.toc-item {
-  @apply border-l-2 pl-2 line-clamp-1 text-sm
-}
-
-.active-toc-item {
-  @apply text-blue-400 border-blue-400 font-bold
-}
-
-.toc-sublist-item {
-  @apply pl-6
-}
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4,
-.prose h5,
-.prose h6 {
-  @apply scroll-m-24;
-}
-</style>

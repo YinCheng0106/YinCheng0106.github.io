@@ -12,16 +12,12 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   modulesDir: ['../../node_modules'],
   content: {
-    markdown: {
-      rehypePlugins: [
-        'rehype-raw',
-      ],
-    },
-    highlight: {
-      theme: 'github-dark',
-    },
-    navigation: {
-      fields: ['title', 'description', 'published_at', 'tags'],
+    build:{
+      markdown: {
+        highlight:{
+          theme: 'github-dark',
+        }
+      },
     },
   },
   app: {
@@ -60,6 +56,5 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
-    'nuxt-toc',
   ],
 })

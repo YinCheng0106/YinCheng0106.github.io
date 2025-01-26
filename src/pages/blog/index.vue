@@ -15,14 +15,14 @@ const dateFormat = 'yyyy-MM-dd';
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
+const { data: posts } = await useAsyncData('blog', () => queryCollection('blog').all())
 </script>
 
 <template>
   <div>
-    <ContentList path="/blog" v-slot="{ list }">
-      <div v-for="blog in list" :key="blog._path">
+      <div v-for="blog in posts" :key="blog.path">
         <NuxtLink
-          :to="blog._path"
+          :to="blog.path"
           class="block p-2 m-4 border-b border-gray-200 rounded-t-2xl dark:hover:bg-neutral-900 hover:bg-gray-100 dark:hover:border-gray-500 hover:border-gray-400 duration-300 transition ease-in-out"
         > 
           <h2 class="mt-2 mx-2 font-bold text-xl">{{ blog.title }}</h2>
@@ -36,6 +36,5 @@ const dateFormater = (date: string, format: string) => {
           </p>
         </NuxtLink>
       </div>
-    </ContentList>
   </div>
 </template>
