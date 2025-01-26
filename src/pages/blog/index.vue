@@ -20,7 +20,8 @@ const { data: posts } = await useAsyncData('blog', () => queryCollection('blog')
 
 <template>
   <div>
-      <div v-for="blog in posts" :key="blog.path">
+    <h2 class="flex flex-wrap items-center justify-center text-2xl font-blod font-mono">Blog 部落格</h2>
+      <div v-for="blog in posts" :key="blog.path" v-if="posts">
         <NuxtLink
           :to="blog.path"
           class="block p-2 m-4 border-b border-gray-200 rounded-t-2xl dark:hover:bg-neutral-900 hover:bg-gray-100 dark:hover:border-gray-500 hover:border-gray-400 duration-300 transition ease-in-out"
@@ -35,6 +36,19 @@ const { data: posts } = await useAsyncData('blog', () => queryCollection('blog')
             <Clock class="mr-1" :size="16" :stroke-width="2.25" />{{ dateFormater(blog.published_at, dateFormat) }}
           </p>
         </NuxtLink>
+      </div>
+      <div class="flex md:my-24 items-center font-mono" v-else>
+        <div class="mx-auto flex flex-wrap items-center p-4">
+            <div class="w-full text-center md:w-1/2">
+                <div class="text-[10rem]" aria-label="Error Code 500">欸？</div>
+            </div>
+            <div class="w-full p-4 text-center md:w-1/2 md:text-left">
+                <div class="mb-12 text-3xl">沒有文章?<br>請再試一試</div>
+                <NuxtLink to="/"
+                    class="rounded-lg border dark:border-white px-4 py-2 hover:bg-gray-50 hover:bg-opacity-10 active:bg-opacity-20 duration-300 delay-75">
+                    回首頁</NuxtLink>
+            </div>
+        </div>
       </div>
   </div>
 </template>
