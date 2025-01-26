@@ -16,21 +16,31 @@ const { data: posts } = await useAsyncData('blog', () =>
   .path(`/blog/${ id }`)
   .first());
 
-useSeoMeta({
-  title: `${ posts.value?.title }`,
-  ogTitle: `${ posts.value?.title } | YinCheng`,
-  description: posts.value?.description,
-  ogDescription: posts.value?.description,
-  twitterCard: 'summary_large_image',
-});
-console.log(posts);
+if(posts.value?.title === undefined) {
+  useSeoMeta({
+    title: "404 Not Found",
+    ogTitle: "404 Not Found | YinCheng",
+    description: "此文章不存在",
+    ogDescription: "此文章不存在",
+    twitterCard: 'summary_large_image',
+  });
+} else {
+  useSeoMeta({
+    title: `${ posts.value?.title }`,
+    ogTitle: `${ posts.value?.title } | YinCheng`,
+    description: posts.value?.description,
+    ogDescription: posts.value?.description,
+    twitterCard: 'summary_large_image',
+  });
+}
+
 
 defineOgImageComponent('BlogPost');
 </script>
 
 <template>
   <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
-    <div>
+    <div v-if="posts">
       <h1 class="text-4xl font-bold font-sans m-2">{{ posts.title }}</h1>
       <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(posts.published_at, dateTimeFormat) }}</p>
       <div v-for="tag in posts.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
