@@ -21,6 +21,7 @@ const { data: posts } = await useAsyncData('blog', () => queryCollection('blog')
 <template>
   <div>
     <h2 class="flex flex-wrap items-center justify-center text-2xl font-blod font-mono">Blog 部落格</h2>
+    <BlurReveal :delay="0.2" :duration="0.75" class="max-md:p-2 max-lg:p-4 max-xl:p-6 p-8">
       <div v-for="blog in posts" :key="blog.path" v-if="posts">
         <NuxtLink
           :to="blog.path"
@@ -40,9 +41,9 @@ const { data: posts } = await useAsyncData('blog', () => queryCollection('blog')
       <div class="flex md:my-24 items-center font-mono" v-else>
         <div class="mx-auto flex flex-wrap items-center p-4">
             <div class="w-full text-center md:w-1/2">
-                <div class="text-[10rem]" aria-label="Error Code 500">欸？</div>
+                <div class="text-[10rem]" aria-label="Error Code 500">欸?</div>
             </div>
-            <div class="w-full p-4 text-center md:w-1/2 md:text-left">
+            <div class="w-full p-4 text-center md:w-1/2 md:text-left md:p-6">
                 <div class="mb-12 text-3xl">沒有文章?<br>請再試一試</div>
                 <NuxtLink to="/"
                     class="rounded-lg border dark:border-white px-4 py-2 hover:bg-gray-50 hover:bg-opacity-10 active:bg-opacity-20 duration-300 delay-75">
@@ -50,5 +51,6 @@ const { data: posts } = await useAsyncData('blog', () => queryCollection('blog')
             </div>
         </div>
       </div>
+    </BlurReveal>
   </div>
 </template>

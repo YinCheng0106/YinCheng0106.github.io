@@ -34,7 +34,6 @@ if(posts.value?.title === undefined) {
   });
 }
 
-
 defineOgImageComponent('BlogPost');
 </script>
 
