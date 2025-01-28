@@ -47,7 +47,7 @@ defineOgImageComponent('BlogPost');
         <p class="dark:text-gray-400 text-gray-700 font-mono"># {{ tag }}</p>
       </div>
     </div>
-    <div class="mx-4 my-6">
+    <div class="mx-6 my-6">
       <ContentRenderer class="text-black dark:text-white prose" :value="posts" v-if="posts" :prose="true" />
       <div class="flex md:my-24 items-center font-mono" v-else>
         <div class="mx-auto flex flex-wrap items-center p-4">
