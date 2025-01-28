@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import RepoMenu from "../components/Project.vue";
+import RepoMenu from "../components/project.vue";
 useSeoMeta({
   title: "首頁",
   ogTitle: "YinCheng",
