@@ -15,11 +15,12 @@ const dateFormat = 'yyyy-MM-dd';
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-const { data: posts } = await useAsyncData(() => 
-  queryCollection('blog')
+const { data: posts } = await useAsyncData('blog', () => {
+  return queryCollection('blog')
     .order('published_at', 'DESC')
     .select('title', 'description', 'published_at', 'path')
-    .all())
+    .all()
+  })
 </script>
 
 <template>

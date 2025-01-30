@@ -11,10 +11,9 @@ const dateTimeFormat = `${dateFormat} HH:mm`;
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-const { data: posts } = await useAsyncData(() => 
-  queryCollection('blog')
-  .path(route.path)
-  .first());
+const { data: posts } = await useAsyncData(route.path, () => {
+  return queryCollection('blog').path(route.path).first()
+})
 
 if(posts.value?.title === undefined) {
   useSeoMeta({
