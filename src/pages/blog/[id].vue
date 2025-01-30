@@ -40,31 +40,31 @@ defineOgImageComponent('BlogPost');
 <template>
   <div class="max-w-2xl w-screen mx-auto max-sm:max-w-xs max-md:max-w-md max-lg:max-w-lg">
     <div v-if="posts">
-      <h1 class="text-4xl font-bold font-sans m-2">{{ posts.title }}</h1>
-      <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(posts.published_at, dateTimeFormat) }}</p>
-      <div v-for="tag in posts.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
-        <p class="dark:text-gray-400 text-gray-700 font-mono">#<span class="md:pl-1 pl-0.5">{{ tag }}</span></p>
+      <div>
+        <h1 class="text-4xl font-bold font-sans m-2">{{ posts.title }}</h1>
+        <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(posts.published_at, dateTimeFormat) }}</p>
+        <div v-for="tag in posts.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
+          <p class="dark:text-gray-400 text-gray-700 font-mono">#<span class="md:pl-1 pl-0.5">{{ tag }}</span></p>
+        </div>
       </div>
-    </div>
-    <div class="mx-6 my-6">
-      <div v-if="posts">
+      <div class="mx-2 my-4">
         <ContentRenderer class="text-black dark:text-white prose" :value="posts" :prose="true" />
         <TableOfContent class="fixed top-32 left-10 max-md:hidden bg-opacity-50 bg-white dark:bg-black dark:bg-opacity-50 p-4 rounded-lg w-auto max-2xl:w-40 max-lg:w-32 max-xl:w-36" active-toc-id="posts" />
       </div>
-      <div class="flex md:my-24 items-center font-mono" v-else>
-        <div class="mx-auto flex flex-wrap items-center p-4">
-            <div class="w-full text-center md:w-1/2">
-                <div class="text-[10rem]" aria-label="Error Code 404">404</div>
-            </div>
-            <div class="w-full p-4 text-center md:w-1/2 md:text-left">
-                <div class="mb-12 text-3xl"><del>你發現了一個神秘的通道</del></div>
-                <NuxtLink to="/blog"
-                    class="rounded-lg border dark:border-white px-4 py-2 hover:bg-gray-50 hover:bg-opacity-10 active:bg-opacity-20 duration-300 delay-75">
-                    回 Blog</NuxtLink>
-            </div>
-        </div>
-      </div> 
     </div>
+    <div class="flex md:my-24 items-center font-mono" v-else>
+      <div class="mx-auto flex flex-wrap items-center p-4">
+          <div class="w-full text-center md:w-1/2">
+              <div class="text-[10rem]" aria-label="Error Code 404">404</div>
+          </div>
+          <div class="w-full p-4 text-center md:w-1/2 md:text-left">
+              <div class="mb-12 text-3xl"><del>你發現了一個神秘的通道</del></div>
+              <NuxtLink to="/blog"
+                  class="rounded-lg border dark:border-white px-4 py-2 hover:bg-gray-50 hover:bg-opacity-10 active:bg-opacity-20 duration-300 delay-75">
+                  回 Blog</NuxtLink>
+          </div>
+      </div>
+    </div> 
   </div>
 </template>
 
