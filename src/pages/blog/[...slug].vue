@@ -11,9 +11,9 @@ const dateTimeFormat = `${dateFormat} HH:mm`;
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-const { data: posts } = await useAsyncData('blog', () => 
+const { data: posts } = await useAsyncData(route.path, () => 
   queryCollection('blog')
-  .path(`/blog/${ id }`)
+  .path(route.path)
   .first());
 
 if(posts.value?.title === undefined) {

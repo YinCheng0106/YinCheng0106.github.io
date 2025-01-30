@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useRoute } from 'vue-router'
 import { watchDebounced } from '@vueuse/core'
 import { ref } from 'vue'
 
 const props = withDefaults(defineProps<{ activeTocId: string }>(), {})
+const route = useRoute()
 const router = useRouter()
 
 const sliderHeight = useState('sliderHeight', () => 0)
@@ -10,7 +12,7 @@ const sliderTop = useState('sliderTop', () => 0)
 const tocLinksH2: Ref<Array<HTMLElement>> = ref([])
 const tocLinksH3: Ref<Array<HTMLElement>> = ref([])
 
-const { data: blogPost } = await useAsyncData(`blog`, () => queryCollection(`blog`).first())
+const { data: blogPost } = await useAsyncData(route.path, () => queryCollection(`blog`).path(route.path).first())
 const tocLinks = computed(() => blogPost.value?.body.toc.links ?? [])
 
 const onClick = (id: string) => {
@@ -63,7 +65,7 @@ watchDebounced(
           :id="`toc-${id}`"
           :key="id"
           ref="tocLinksH2"
-          class="mb-2 ml-0 cursor-pointer list-none text-sm last:mb-0"
+          class="mb-2 ml-0 cursor-pointer list-none text-sm last:mb-0 line-clamp-1"
           :class="{ 'font-bold': id === activeTocId }"
           @click="onClick(id)"
         >
@@ -74,7 +76,7 @@ watchDebounced(
               :id="`toc-${childId}`"
               :key="childId"
               ref="tocLinksH3"
-              class="mb-2 ml-0 cursor-pointer list-none text-xs last:mb-0"
+              class="mb-2 ml-0 cursor-pointer list-none text-xs last:mb-0 line-clamp-1"
               :class="{ 'font-bold': childId === activeTocId }"
               @click.stop="onClick(childId)"
             >
