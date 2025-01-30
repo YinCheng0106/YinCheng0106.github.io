@@ -16,8 +16,6 @@ const { data: posts } = await useAsyncData(route.path, () =>
   .path(route.path)
   .first());
 
-console.log(posts);
-
 if(posts.value?.title === undefined) {
   useSeoMeta({
     title: "404 Not Found",
