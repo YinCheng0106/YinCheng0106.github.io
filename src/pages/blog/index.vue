@@ -20,7 +20,7 @@ const { data: posts } = await useAsyncData('blog', () => {
     .order('published_at', 'DESC')
     .select('title', 'description', 'published_at', 'path')
     .all()
-  })
+  }, { lazy: true });
 </script>
 
 <template>

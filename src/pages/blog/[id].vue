@@ -13,7 +13,7 @@ const dateFormater = (date: string, format: string) => {
 }
 const { data: posts } = await useAsyncData(route.path, () => {
   return queryCollection('blog').path(route.path).first()
-})
+}, { lazy: true });
 
 if(posts.value?.title === undefined) {
   useSeoMeta({
