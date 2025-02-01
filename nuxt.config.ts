@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     url: process.env.NUXT_SITE_URL,
     name: 'YinCheng',
   },
-  srcDir: 'src/',
   modulesDir: ['../../node_modules'],
   content: {
     build:{
