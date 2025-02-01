@@ -8,20 +8,12 @@ const id = route.params.id;
 const dateFormat = 'yyyy-MM-dd';
 const dateTimeFormat = `${dateFormat} HH:mm`;
 
+const { data: posts } = await useAsyncData(`blog-${route.path}`, async () => {
+  return queryCollection('blog').path(route.path).first()
+});
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-const { data: posts, error } = await useAsyncData(`blog-${route.path}`, async () => {
-  try {
-    const post = await queryCollection("blog").path(route.path).first();
-    return post || null;
-  } catch (err) {
-    console.error("Error fetching blog post: ", err);
-    return null;
-  }
-});
-
-if (error.value) console.error("NuxtContent Error:", error.value);
 
 if(posts.value?.title === undefined) {
   useSeoMeta({
