@@ -8,9 +8,10 @@ const id = route.params.id;
 const dateFormat = 'yyyy-MM-dd';
 const dateTimeFormat = `${dateFormat} HH:mm`;
 
-const { data: posts } = await useAsyncData(`blog-${route.path}`, async () => {
+const { data: posts } = await useAsyncData(() => {
   return queryCollection('blog').path(route.path).first()
 });
+
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }

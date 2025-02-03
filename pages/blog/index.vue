@@ -15,27 +15,19 @@ const dateFormat = 'yyyy-MM-dd';
 const dateFormater = (date: string, format: string) => {
   return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-const { data: posts, error } = await useAsyncData('blog', async () => {
-  try{
-    const post_list = await queryCollection('blog')
+const { data: posts } = await useAsyncData(() => {
+  return queryCollection('blog')
     .order('published_at', 'DESC')
-    .select('title', 'description', 'published_at', 'path')
+    .select('title', 'description', 'published_at', 'path', 'id')
     .all()
-    return post_list || null;
-  } catch (err) {
-    console.error("Error fetching post_list: ", err);
-    return null;
-  }
 });
-
-if (error.value) console.error("NuxtContent Error:", error.value);
 </script>
 
 <template>
   <div>
     <h2 class="flex flex-wrap items-center justify-center text-2xl font-blod font-mono">Blog 部落格</h2>
     <BlurReveal :delay="0.2" :duration="0.75" class="max-md:p-2 max-lg:p-4 max-xl:p-6 p-8">
-      <div v-for="blog in posts" :key="blog.path" v-if="posts">
+      <div v-for="blog in posts" :key="blog.id" v-if="posts">
         <NuxtLink
           :to="blog.path"
           class="block p-2 m-4 border-b border-gray-200 rounded-t-2xl dark:hover:bg-neutral-900 hover:bg-gray-100 dark:hover:border-gray-500 hover:border-gray-400 duration-300 transition ease-in-out"
