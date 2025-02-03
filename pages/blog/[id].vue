@@ -11,36 +11,27 @@ const dateTimeFormat = `${dateFormat} HH:mm`;
 const { data: posts } = await useAsyncData(`blog-${route.path}`, async () => {
   return queryCollection('blog').path(route.path).first()
 });
+const dateFormater = (date: string, format: string) => {
+  return DateTime.fromISO(date).toLocal().toFormat(format);
+}
 
-useSeoMeta({
+if(posts.value?.title === undefined) {
+  useSeoMeta({
+    title: "404 Not Found",
+    ogTitle: "404 Not Found | YinCheng",
+    description: "此文章不存在",
+    ogDescription: "此文章不存在",
+    twitterCard: 'summary_large_image',
+  });
+} else {
+  useSeoMeta({
     title: `${ posts.value?.title }`,
     ogTitle: `${ posts.value?.title } | YinCheng`,
     description: posts.value?.description,
     ogDescription: posts.value?.description,
     twitterCard: 'summary_large_image',
   });
-
-const dateFormater = (date: string, format: string) => {
-  return DateTime.fromISO(date).toLocal().toFormat(format);
 }
-
-// if(posts.value?.title === undefined) {
-//   useSeoMeta({
-//     title: "404 Not Found",
-//     ogTitle: "404 Not Found | YinCheng",
-//     description: "此文章不存在",
-//     ogDescription: "此文章不存在",
-//     twitterCard: 'summary_large_image',
-//   });
-// } else {
-//   useSeoMeta({
-//     title: `${ posts.value?.title }`,
-//     ogTitle: `${ posts.value?.title } | YinCheng`,
-//     description: posts.value?.description,
-//     ogDescription: posts.value?.description,
-//     twitterCard: 'summary_large_image',
-//   });
-// }
 
 defineOgImageComponent('BlogPost');
 </script>
@@ -60,7 +51,7 @@ defineOgImageComponent('BlogPost');
         <TableOfContent class="fixed top-32 left-10 max-md:hidden bg-opacity-50 bg-white dark:bg-black dark:bg-opacity-50 p-4 rounded-lg w-auto max-2xl:w-40 max-lg:w-32 max-xl:w-36" active-toc-id="posts" />
       </div>
     </div>
-    <!-- <div class="flex md:my-24 items-center font-mono" v-else>
+    <div class="flex md:my-24 items-center font-mono" v-else>
       <div class="mx-auto flex flex-wrap items-center p-4">
           <div class="w-full text-center md:w-1/2">
               <div class="text-[10rem]" aria-label="Error Code 404">404</div>
@@ -72,7 +63,7 @@ defineOgImageComponent('BlogPost');
                   回 Blog</NuxtLink>
           </div>
       </div>
-    </div>  -->
+    </div> 
   </div>
 </template>
 
