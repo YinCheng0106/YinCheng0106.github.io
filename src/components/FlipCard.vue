@@ -41,25 +41,19 @@
           >
             {{ props.description }}
           </p>
-          <div class="absolute flex items-center justify-center bottom-2 gap-4 left-0 right-0 mx-auto text-xl">
-            <NuxtLink
-              class="_link dark:text-gray-500"
-              :to="props.github"
+          <div
+            class="absolute flex items-center justify-center bottom-2 gap-4 left-0 right-0 mx-auto text-xl"
+          >
+            <NuxtLink class="_link dark:text-gray-500" :to="props.github"
               ><Icon name="bi:github"
             /></NuxtLink>
-            <NuxtLink
-              class="_link dark:text-gray-500"
-              :to="props.instagram"
+            <NuxtLink class="_link dark:text-gray-500" :to="props.instagram"
               ><Icon name="bi:instagram"
             /></NuxtLink>
-            <NuxtLink
-              class="_link dark:text-gray-500"
-              :to="props.threads"
+            <NuxtLink class="_link dark:text-gray-500" :to="props.threads"
               ><Icon name="bi:threads"
             /></NuxtLink>
-            <NuxtLink
-              class="_link dark:text-gray-500"
-              :to="props.twitter"
+            <NuxtLink class="_link dark:text-gray-500" :to="props.twitter"
               ><Icon name="bi:twitter-x"
             /></NuxtLink>
           </div>
@@ -70,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from "@/lib/utils";
+import { cn } from "../lib/utils";
 
 interface FlipCardProps {
   image: string;
