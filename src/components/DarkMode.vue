@@ -9,7 +9,7 @@ const toggle = () => {
 <template>
   <button
     aria-label="Toggle Dark Mode"
-    className="ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4"
+    className="ml-1 mr-1 h-8 w-8 rounded p-1 sm:ml-4 hover:text-gray-700 dark:hover:text-gray-300 transition-colors duration-200 ease-in-out"
     :onClick="() => toggle()"
   >
     <svg
