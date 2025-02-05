@@ -49,7 +49,7 @@ defineOgImageComponent('BlogPost');
       </div>
       <div class="mx-2 my-4">
         <ContentRenderer class="text-black dark:text-white prose" :value="posts" :prose="true" />
-        <TableOfContent class="fixed top-32 left-10 max-md:hidden bg-opacity-50 bg-white dark:bg-black dark:bg-opacity-50 p-4 rounded-lg w-auto max-2xl:w-40 max-lg:w-32 max-xl:w-36" active-toc-id="posts" />
+        <TableOfContent class="fixed top-32 left-10 bg-opacity-50 bg-white dark:bg-black dark:bg-opacity-50 p-4 rounded-lg w-auto max-2xl:w-40 max-xl:w-36 max-lg:w-28 max-md:hidden" active-toc-id="posts" />
       </div>
     </div>
     <div class="flex md:my-24 items-center font-mono" v-else>
