@@ -9,6 +9,7 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         published_at: z.string(),
+        category: z.string(),
         tags: z.array(z.string()),
       })
     })

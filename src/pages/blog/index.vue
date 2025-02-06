@@ -18,7 +18,7 @@ const dateFormater = (date: string, format: string) => {
 const { data: posts } = await useAsyncData(() => {
   return queryCollection('blog')
     .order('published_at', 'DESC')
-    .select('title', 'description', 'published_at', 'path', 'id')
+    .select('title', 'description', 'published_at', 'path', 'id', 'category')
     .all()
 });
 </script>
@@ -38,9 +38,14 @@ const { data: posts } = await useAsyncData(() => {
               {{ blog.description }}
             </p>
           </div>
-          <p class="flex flex-wrap items-center px-4 text-xs dark:text-gray-400 text-gray-700">
-            <Clock class="mr-1" :size="16" :stroke-width="2.25" />{{ dateFormater(blog.published_at, dateFormat) }}
-          </p>
+          <div class="flex flex-wrap items-center">
+            <p class="flex flex-wrap items-center px-4 text-xs dark:text-gray-400 text-gray-700">
+              <Icon class="mr-1" name="flowbite:clock-outline"/>{{ dateFormater(blog.published_at, dateFormat) }}
+            </p>
+            <p class="flex flex-wrap item-center text-xs dark:text-gray-400 text-gray-700">
+              <Icon class="mr-1" name="bi:folder-fill"/>{{ blog.category }}
+            </p>
+          </div>
         </NuxtLink>
       </div>
       <div class="flex md:my-24 items-center font-mono" v-else>
