@@ -31,10 +31,10 @@ watchDebounced(
 
     if (h2Link) {
       sliderHeight.value = h2Link.offsetHeight
-      sliderTop.value = h2Link.offsetTop - 100
+      sliderTop.value = h2Link.offsetTop - 54
     } else if (h3Link) {
       sliderHeight.value = h3Link.offsetHeight
-      sliderTop.value = h3Link.offsetTop - 100
+      sliderTop.value = h3Link.offsetTop - 54
     }
   },
   { debounce: 200, immediate: true }
@@ -52,7 +52,7 @@ watchDebounced(
             left-0
             w-full
             rounded
-            bg-red-500
+            bg-green-500
             transition-all
             duration-200
           "
@@ -65,8 +65,8 @@ watchDebounced(
           :id="`toc-${id}`"
           :key="id"
           ref="tocLinksH2"
-          class="mb-2 ml-0 cursor-pointer list-none text-sm last:mb-0 line-clamp-1"
-          :class="{ 'font-bold': id === activeTocId }"
+          class="ml-0 cursor-pointer list-none text-sm last:mb-0 line-clamp-1"
+          :class="{ 'font-bold text-green-500': id === activeTocId }"
           @click="onClick(id)"
         >
           {{ text }}
@@ -76,8 +76,8 @@ watchDebounced(
               :id="`toc-${childId}`"
               :key="childId"
               ref="tocLinksH3"
-              class="mb-2 ml-0 cursor-pointer list-none text-xs last:mb-0 line-clamp-1"
-              :class="{ 'font-bold': childId === activeTocId }"
+              class="ml-0 cursor-pointer list-none text-xs last:mb-0 line-clamp-1"
+              :class="{ 'font-bold text-green-500': childId === activeTocId }"
               @click.stop="onClick(childId)"
             >
               {{ childText }}

@@ -8,7 +8,6 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
-import { Clock } from 'lucide-vue-next';
 import { DateTime } from 'luxon';
 
 const dateFormat = 'yyyy-MM-dd';
