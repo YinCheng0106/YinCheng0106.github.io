@@ -73,7 +73,7 @@ defineOgImageComponent('BlogPost');
         <p class="flex flex-wrap items-center text-sm p-1 mx-2 float-right max-lg:float-left"><Clock class="mx-1" :size="16" :stroke-width="2.25" />{{ dateFormater(posts.published_at, dateTimeFormat) }}</p>
         <div class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
           <div>
-            <p class="pr-2 dark:text-gray-400 text-gray-700 font-mono"><Icon class="mr-1" name="bi:folder-fill"/>{{ posts.category }}</p>
+            <p class="pr-2 dark:text-gray-300 text-gray-800 font-mono font-bold"><Icon class="mr-1" name="bi:folder-fill"/>{{ posts.category }}</p>
           </div>
           <div v-for="tag in posts.tags" :key="tag" class="inline-flex flex-wrap items-center text-sm p-1 mx-2">
             <p class="dark:text-gray-400 text-gray-700 font-mono">#<span class="md:pl-1 pl-0.5">{{ tag }}</span></p>
