@@ -91,7 +91,7 @@ defineOgImageComponent('BlogPost');
               <div class="text-[10rem]" aria-label="Error Code 404">404</div>
           </div>
           <div class="w-full p-4 text-center md:w-1/2 md:text-left">
-              <div class="mb-12 text-3xl"><del>你發現了一個神秘的通道</del></div>
+              <div class="mb-12 text-3xl"><del>文章消失了你知道他去哪了嗎?</del></div>
               <NuxtLink to="/blog"
                   class="rounded-lg border dark:border-white px-4 py-2 hover:bg-gray-50 hover:bg-opacity-10 active:bg-opacity-20 duration-300 delay-75">
                   回 Blog</NuxtLink>
