@@ -7,6 +7,12 @@ useSeoMeta({
   ogImage: '/about.png',
   twitterCard: 'summary_large_image',
 });
+
+const logos = [
+  { name: 'Nuxt', path: '/Nuxt.svg' },
+  { name: 'Vue', path: '/Vuejs.svg' },
+  { name: 'TailwindCSS', path: '/TailwindCSS.svg' },
+];
 </script>
 
 <template>
@@ -33,6 +39,13 @@ useSeoMeta({
         instagram="https://www.instagram.com/_yincheng_/"
         threads="https://www.threads.net/@_yincheng_"
         twitter="https://x.com/Yin_Cheng0106"
+      />
+    </div>
+
+    <div>
+      <AnimatedLogoCloud
+        :logos="logos"
+        title="Made with"
       />
     </div>
   </div>
