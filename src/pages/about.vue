@@ -26,6 +26,12 @@ const logos = [
         這個網頁的框架是利用 <LinkPreview url="https://nuxt.com/">Nuxt 3</LinkPreview> 以及 <LinkPreview url="https://vuejs.org/">Vue</LinkPreview> 所製作而成的，再結合了 <LinkPreview url="https://tailwindcss.com/">Tailwind CSS</LinkPreview> 來做網頁的美化。
       </p>
     </div>
+    <div>
+      <AnimatedLogoCloud
+        :logos="logos"
+        title="Made with"
+      />
+    </div>
     <h2 class="text-2xl font-bold mt-4">Developer 開發人員</h2>
     <div class="flex items-center justify-center mt-4 gap-4">
       <FlipCard
@@ -42,11 +48,5 @@ const logos = [
       />
     </div>
 
-    <div>
-      <AnimatedLogoCloud
-        :logos="logos"
-        title="Made with"
-      />
-    </div>
   </div>
 </template>
