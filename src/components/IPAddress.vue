@@ -25,5 +25,5 @@ onMounted(async () => {
 
 <template>
   <div class="font-mono">{{ ip }}</div>
-  <div class="font-mono">{{ country }}</div>
+  <div class="font-mono flex flex-wrap justify-center item-center">{{ country }}</div>
 </template>
