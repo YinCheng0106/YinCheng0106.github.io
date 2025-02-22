@@ -12,10 +12,10 @@ onMounted(async () => {
     if(data.ip === "127.0.0.1") {
       ip.value = "本機";
       console.log("Local: ", data.ip);
+      return;
     } else if (data.ip) {
       ip.value = data.ip;
       console.log("S: ", data.ip);
-      return;
     } else {
       ip.value = '無法取得 IP 地址';
       console.log("E: ", data);
@@ -34,7 +34,7 @@ onMounted(async () => {
     city.value = 'Not Found';
     delay.value = 'Not Found';
     currencyCode.value = 'Not Found';
-    currencyConverter.value = 'Not Found';
+    
   }
 });
 </script>
