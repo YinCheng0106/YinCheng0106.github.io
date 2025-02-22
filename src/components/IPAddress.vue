@@ -33,6 +33,8 @@ onMounted(async () => {
     country.value = 'Not Found';
     city.value = 'Not Found';
     delay.value = 'Not Found';
+    currencyCode.value = 'Not Found';
+    currencyConverter.value = 'Not Found';
   }
 });
 </script>
