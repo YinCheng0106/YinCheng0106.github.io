@@ -26,15 +26,15 @@ onMounted(async () => {
     country.value = geoData.geoplugin_countryName || '未知國家';
     city.value = geoData.geoplugin_city || '未知城市';
     delay.value = geoData.geoplugin_delay || '錯誤';
-    currencyCode.value = geoData.geoplugin_currencyCode || '錯誤';
-    currencyConverter.value = geoData.geoplugin_currencyConverter || '錯誤';
+    currencyCode.value = geoData.geoplugin_currencyCode || '未知';
+    currencyConverter.value = geoData.geoplugin_currencyConverter || '未知';
   } catch (error) {
     console.error('Error fetching IP or country:', error);
-    country.value = 'Not Found';
-    city.value = 'Not Found';
-    delay.value = 'Not Found';
-    currencyCode.value = 'Not Found';
-    
+    country.value = '錯誤';
+    city.value = '錯誤';
+    delay.value = '錯誤';
+    currencyCode.value = '錯誤';
+    currencyConverter.value = '錯誤';
   }
 });
 </script>
