@@ -22,7 +22,7 @@
     "@vercel/speed-insights": "^1.2.0",
     "@vueuse/core": "12.7.0",
     "@vueuse/motion": "^2.2.6",
-    "lucide-vue-next": "0.476.0",
+    "lucide-vue-next": "^0.477.0",
     "nuxt": "3.15.4",
     "nuxt-site-config": "3.1.1",
     "qss": "^3.0.0",
